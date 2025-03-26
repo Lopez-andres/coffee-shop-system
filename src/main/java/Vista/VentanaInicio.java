@@ -3,23 +3,27 @@ package Vista;
 import com.formdev.flatlaf.FlatDarculaLaf;
 
 import javax.swing.*;
+import Modelo.PedidosMesas;
 
-public class VentanaPrincipal extends JFrame {
+import java.util.ArrayList;
+
+public class VentanaInicio extends JFrame {
     private JPanel panelPrincipal; // Se inicializa el panel
     private JLabel Usuario;
     private JTextField campoUsuarioTexto;
     private JLabel Password;
     private JPasswordField passwordTexto;
     private JButton ingresaBoton;
-    private JLabel numMesas;
+    private JLabel numMesasLabel;
     private JTextField numMesasTexto;
 
-    public VentanaPrincipal() {
+    public VentanaInicio() {
         inicializarForma();
-        ingresaBoton.addActionListener(e -> validar());
+        ingresaBoton.addActionListener(_ -> validar()); //falta de arraylist
     }
 
     private void inicializarForma(){
+        setTitle("VentanaInicio");
         setContentPane(panelPrincipal);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(410,490);
@@ -27,16 +31,10 @@ public class VentanaPrincipal extends JFrame {
     }
 
     private void validar(){
-        //Aqui se leeran los valores de los campos de texto
-        var usuario = this.campoUsuarioTexto.getText(); //recuperamos la informacion de la caja de texto de usuario
-        var password = new String(this.passwordTexto.getPassword()); //recuperamos la informacion de la caja de texto de password
-        var numMesasTexto = this.numMesasTexto.getText().trim(); //capturamos la informacion y dejamos espacios en blanco
-
         //validacion para numero de mesas correctos
-        int numMesas = 0;
+        int numMesas;
         try {
-            numMesas = Integer.parseInt(numMesasTexto); // Convertimos el texto a número
-
+            numMesas = Integer.parseInt(this.numMesasTexto.getText()); // Convertimos el texto a número
             if (numMesas < 1 || numMesas > 10) {
                 mostrarMensaje("El número de mesas debe estar entre 1 y 10.");
                 return; // Sale del metodo si la validación falla
@@ -47,19 +45,22 @@ public class VentanaPrincipal extends JFrame {
         }
 
         //validacion para usuario y contraseña correctos
-        if("user1".equals(usuario) && "1234".equals(password)){
-            //abrir la nueva ventana y cerrar la actual
+        if("user1".equals(this.campoUsuarioTexto.getText()) && "1234".equals(new String(this.passwordTexto.getPassword()))){
+            //cerrar la ventana actual
+            this.dispose();
 
-            VentanaInventario ventanainventario = new VentanaInventario();
-            ventanainventario.setVisible(true);
+            ArrayList<PedidosMesas> listaMesas = new ArrayList<>();
+            for (int i = 0; i < numMesas; i++) {
+                listaMesas.add(new PedidosMesas(i + 1, listaMesas));
+            }
 
-            /*VentanaAccion ventanaAccion = new VentanaAccion(numMesas);
-            ventanaAccion.setVisible(true);*/
-            this.dispose(); //Cierra la ventana actual
+            System.out.println(listaMesas); // Verificación de que la lista se llena correctamente
 
-        }else if("user1".equals(usuario)){
+            VentanaPedidos ventanaPedidos = new VentanaPedidos(numMesas, listaMesas);
+
+        }else if("user1".equals(this.campoUsuarioTexto.getText())){
             mostrarMensaje("Password incorrecto, por favor corregirlo!");
-        }else if("1234".equals(password)){
+        }else if("1234".equals(new String(this.passwordTexto.getPassword()))){ // convierto el char de getpassword a string
             mostrarMensaje("Usuario incorrecto, por favor corregirlo!");
         }
         else{
@@ -73,7 +74,7 @@ public class VentanaPrincipal extends JFrame {
 
     public static void main(String[] args) {
         FlatDarculaLaf.setup(); //cambiar el look and field a modo dark
-        VentanaPrincipal ventanaPrincipal = new VentanaPrincipal();
-        ventanaPrincipal.setVisible(true);
+        VentanaInicio ventanaInicio = new VentanaInicio();
+        ventanaInicio.setVisible(true);
     }
 }
