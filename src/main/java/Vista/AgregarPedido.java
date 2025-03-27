@@ -4,44 +4,27 @@ import Modelo.Productos;
 import Modelo.PedidosMesas;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class AgregarPedido extends JDialog {
-    private JPanel PanelPrincipal;
-    private JPanel PanelTitulosColumnas;
-    private JPanel PanelInformacionProductos;
-    private JPanel PanelButtons;
-    private JTextField CantidadGaseosa;
-    private JTextField CantidadPapasFritas;
-    private JTextField CantidadJugo;
-    private JButton cancelarButton;
-    private JButton aceptarButton;
-    private JLabel GaseosaJLabel;
-    private JLabel PapasFritasJLabel;
-    private JLabel JugoJLabel;
-    private JLabel PrecioGaseosa;
-    private JLabel PrecioPapasFritas;
-    private JLabel PrecioJugo;
-    private PedidosMesas mesaSeleccionada;
+    private JPanel PanelPrincipal, PanelTitulosColumnas, PanelInformacionProductos, PanelButtons;
+    private JTextField CantidadGaseosa, CantidadPapasFritas, CantidadJugo;
+    private JButton cancelarButton, aceptarButton;
+    private JLabel GaseosaJLabel, PapasFritasJLabel, JugoJLabel, PrecioGaseosa, PrecioPapasFritas, PrecioJugo;
+    private final PedidosMesas mesaSeleccionada; //se crea para que toda la clase acceda a esta informacion durante la ejecucion
+
+    /* este constructor recibe la ventana que invoca el JDialog, modal para bloquear la ventana
+      Principal hasta que se cierre esta y la mesa a la que se agregara el pedido */
 
     public AgregarPedido(JFrame parent, boolean modal,  PedidosMesas mesaSeleccionada) {
-        super(parent, modal);
+        super(parent, modal); //llamada al constructor de JDialog configurado JFrame y JDialog
         this.mesaSeleccionada = mesaSeleccionada;
 
-        aceptarButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                guardarPedido();
-                AgregarPedido.this.dispose();
-            }
+        aceptarButton.addActionListener(e -> {
+            guardarPedido();
+            AgregarPedido.this.dispose();
         });
-        cancelarButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                AgregarPedido.this.dispose();
-            }
-        });
+
+        cancelarButton.addActionListener(e -> AgregarPedido.this.dispose());
 
         setTitle("Mesa " + mesaSeleccionada.toStringId());
         setSize(500, 350);
@@ -49,42 +32,47 @@ public class AgregarPedido extends JDialog {
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setContentPane(PanelPrincipal);
         setVisible(true); //esto siempre debe ir de último
-        // Agrega aquí los componentes necesarios, por ejemplo: JTable, JLabel, etc.
     }
 
     private void guardarPedido() {
         try {
-            // se hace uso del operador ternario
-            int cantGaseosa = CantidadGaseosa.getText().isEmpty() ? 0 : Integer.parseInt(CantidadGaseosa.getText());
-            int cantPapas = CantidadPapasFritas.getText().isEmpty() ? 0 : Integer.parseInt(CantidadPapasFritas.getText());
-            int cantJugo = CantidadJugo.getText().isEmpty() ? 0 : Integer.parseInt(CantidadJugo.getText());
+            /*se hace uso del operador ternario, en caso de que no se llene algun campo de cantidad
+            se tome el valor de este campo por defecto como 0*/
+
+            int cantGaseosa = getCantidadGaseosa().getText().isEmpty() ? 0 : Integer.parseInt(getCantidadGaseosa().getText());
+            int cantPapas = getCantidadPapasFritas().getText().isEmpty() ? 0 : Integer.parseInt(getCantidadPapasFritas().getText());
+            int cantJugo = getCantidadJugo().getText().isEmpty() ? 0 : Integer.parseInt(getCantidadJugo().getText());
 
             boolean pedidoAgregado = false;
             if (cantGaseosa > 0) {
-                mesaSeleccionada.agregarProducto(new Productos("Gaseosa",cantGaseosa,2000)); // Precio de ejemplo
+                this.mesaSeleccionada.agregarProducto(new Productos("Gaseosa",cantGaseosa,2000)); // Precio de ejemplo
                 pedidoAgregado = true;
             }
             if (cantPapas > 0) {
-                mesaSeleccionada.agregarProducto(new Productos("Papas Fritas",cantPapas, 3000));
+                this.mesaSeleccionada.agregarProducto(new Productos("Papas Fritas",cantPapas, 3000));
                 pedidoAgregado = true;
             }
             if (cantJugo > 0) {
-                mesaSeleccionada.agregarProducto(new Productos("Jugo",cantJugo,4200));
+                this.mesaSeleccionada.agregarProducto(new Productos("Jugo",cantJugo,4200));
                 pedidoAgregado = true;
             }
 
+            //contradigo, es decir si es false pasa a ser true y no se ha agregado ningun pedido
             if (!pedidoAgregado) {
                 JOptionPane.showMessageDialog(this, "Debe ingresar al menos un " +
                                 "producto para crear un pedido.", "Pedido vacío", JOptionPane.WARNING_MESSAGE);
                 return; // No cierra la ventana si no hay productos
             }
 
-            System.out.println("Pedido guardado para " + mesaSeleccionada.toString());
+            System.out.println("Pedido guardado para " + mesaSeleccionada);
         } catch (NumberFormatException ex) {
             JOptionPane.showMessageDialog(this, "Ingrese valores numéricos válidos.", "Error",
                     JOptionPane.ERROR_MESSAGE);
         }
     }
+
+    /*Estos campos (JTextField) pertenecen a esta clase interfaz gráfica,
+    donde el usuario ingresa manualmente la cantidad de productos*/
 
     public JTextField getCantidadGaseosa() {
         return CantidadGaseosa;
@@ -98,3 +86,4 @@ public class AgregarPedido extends JDialog {
         return CantidadJugo;
     }
 }
+
