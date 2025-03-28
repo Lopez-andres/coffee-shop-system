@@ -7,7 +7,7 @@ import Modelo.PedidosMesas;
 import java.awt.*;
 import java.util.ArrayList;
 
-public class VentanaInicio extends JFrame {
+public class    VentanaInicio extends JFrame {
     private JPanel panelPrincipal; // Se inicializa el panel
     private JLabel Usuario, Password, numMesasLabel, LoginJLabel;
     private JTextField campoUsuarioTexto, numMesasTexto;
