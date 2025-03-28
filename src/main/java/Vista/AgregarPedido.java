@@ -2,7 +2,6 @@ package Vista;
 
 import Modelo.Productos;
 import Modelo.PedidosMesas;
-
 import javax.swing.*;
 
 public class AgregarPedido extends JDialog {

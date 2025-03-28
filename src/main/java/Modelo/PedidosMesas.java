@@ -73,7 +73,7 @@ public class PedidosMesas{
                 mesaSeleccionada.pagado = false;
 
                 /*se crea una ventana emergente para agregar los productos a la mesa contiene la VentanaPedidos, true para decir que
-                la ventana es modal (se bloquea la interaccion con demas ventanas hasta cerrarla, la mesa a la que se agrega el pedido*/
+                la ventana es modal (se bloquea la interaction con ademas ventanas hasta cerrarla, la mesa a la que se agrega el pedido*/
 
                 mesaSeleccionada.AgPedido = new AgregarPedido(ventanaPedidos, true, mesaSeleccionada);
             } else {
@@ -264,7 +264,7 @@ public class PedidosMesas{
         Map<String, Integer> productosVendidos = new HashMap<>(); // Contador de productos vendidos (nombreProducto -> CantidadVendida)
         int totalVentas = 0; // 🔥 Nueva variable para total de ventas en general
 
-        // Recorremos el historial de pedidos -> Producto mas vendido,cantidad de pedidos por mesa, ventas totales por mesa
+        // Recorremos el historial de pedidos -> Producto mas vendido, cantidad de pedidos por mesa, ventas totales por mesa
         for (PedidosMesas pedido : historialPedidos) {
             int totalMesa = 0;
 
@@ -282,7 +282,7 @@ public class PedidosMesas{
             }
 
             /*Sumar las ventas totales por mesa y actualiza las ventas totales de las mesas
-            la clave es el idMesa y su valor es el total de esa mesa que ira actualizandose segun las ventas*/
+            la clave es el idMesa y su valor es el total de esa mesa que irá actualizándose según las ventas*/
 
             ventasPorMesa.put(pedido.idMesa, ventasPorMesa.getOrDefault(pedido.idMesa, 0) + totalMesa);
 
@@ -296,7 +296,7 @@ public class PedidosMesas{
         String productoMasVendido = "Ninguno";
         int maxCantidad = 0;
 
-        /*Aqui se determina cual fue el producto mas vendido (se itera sobre cada producto y su # de ventas)
+        /*Aquí se determina cuál fue el producto mas vendido (se itera sobre cada producto y su # de ventas)
         - la clave es el nombreProducto y el valor es CantidadTotalVentasProducto */
 
         for (Map.Entry<String, Integer> entry : productosVendidos.entrySet()) {
@@ -314,7 +314,7 @@ public class PedidosMesas{
 
         //se itera sobre el HashMap para obtener el total vendido de cada mesa
         for (Map.Entry<Integer, Integer> entry : ventasPorMesa.entrySet()) {
-            int mesaId = entry.getKey();            //obtiene el numero de mesa
+            int mesaId = entry.getKey();            //obtiene el número de mesa
             int totalVentasMesa = entry.getValue();         //total de dinero del pedido de esta mesa
             int pedidosMesa = cantidadPedidosPorMesa.get(mesaId);       //cantidad de pedidos hechos en esta mesa
             double promedioMesa = (double) totalVentasMesa / pedidosMesa;       //calcula el promedio de ventas de esta mesa
@@ -337,7 +337,7 @@ public class PedidosMesas{
         return " mesa " + idMesa + " | productos: " + productos;
     }
 
-    public String toStringId() {
+    public String toStringId() { //para el título de la ventana mesa
         return String.valueOf(idMesa);
     }
 }
