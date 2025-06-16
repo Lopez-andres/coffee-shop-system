@@ -1,6 +1,6 @@
 # ☕ Cafe Sales Management – Event-Driven Programming Mini Project
 
-![Vista de la interfaz](src\main\java\cafeteria.png)
+![Interface view](src/main/java/cafeteria.png)
 
 ## 📝 Project Overview
 
