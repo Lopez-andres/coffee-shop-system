@@ -1,38 +1,69 @@
-# Cafe Sales Management - Event-Driven Programming Mini Project
+# ☕ Cafe Sales Management – Event-Driven Programming Mini Project
 
-Project Overview
+![Vista de la interfaz](img/cafeteria.png)
 
-This project is a Java application designed to manage table orders in a café using an interactive graphical interface. The application allows users to process sales, track earnings, and identify the most sold product.
+## 📝 Project Overview
 
-Features
+This project is a Java application designed to manage table orders in a café using an interactive graphical interface.  
+The application allows users to process sales, track earnings, and identify the most sold product.
 
-Product Management: Three predefined products: Soda, Juice, and French Fries, with fixed prices set in the code.
+---
 
-Table Selection: Users specify the number of tables at the start, which are then available in a dropdown menu.
+## 🚀 Features
 
-Order Processing: Orders can be placed by selecting a table, choosing products, and specifying quantities.
+### 🛒 Product Management  
+Three predefined products with fixed prices set in the code:  
+- **Soda**  
+- **Juice**  
+- **French Fries**
 
-Payment Confirmation: A button to confirm payment and allow new orders for the selected table.
+### 🪑 Table Selection  
+- Users specify the number of tables at startup.  
+- Tables are available in a dropdown menu (`JComboBox`) for selection.
 
-Order Cancellation: A button to remove a canceled order and enable placing a new one.
+### 📦 Order Processing  
+- Orders can be placed by selecting a table, choosing products, and specifying quantities.
 
-Sales Report: Displays total sales, average income per table, and the most sold product.
+### 💰 Payment Confirmation  
+- A button allows confirming the payment for a table.  
+- After confirmation, new orders can be placed for that table.
 
-Technologies Used
+### ❌ Order Cancellation  
+- A button removes a canceled order and allows new orders to be placed.
 
-Java for backend logic.
+### 📊 Sales Report  
+- Displays total sales.  
+- Shows average income per table.  
+- Identifies the most sold product.
 
-Swing for the graphical user interface.
+---
 
-JComboBox for table selection.
+## 💻 Technologies Used
 
-Installation & Usage
+- Java for backend logic  
+- Swing for the graphical user interface  
+- `JComboBox` for dynamic table selection
 
+---
 
-Team
+## ⚙️ Installation & Usage
 
-This project was developed as part of the Event-Driven Programming course by a team of up to four members.
+1. Open the project in **IntelliJ IDEA** or any Java-compatible IDE.  
+2. Run the **main class** to launch the café application.  
+3. Define the number of tables.  
+4. Place, cancel, and confirm orders using the interface.  
+5. View sales reports as needed.
 
-License
+---
 
-This project is for educational purposes only.
+## 👥 Team
+
+This project was developed as part of the **Event-Driven Programming** course  
+by a team of up to **one members**.
+
+---
+
+## 📄 License
+
+This project is for **educational purposes only**.
+
