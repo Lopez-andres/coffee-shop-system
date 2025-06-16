@@ -15,7 +15,7 @@ public class PedidosMesas{
     private final ArrayList<PedidosMesas> listaMesas;
     private final ArrayList<PedidosMesas> historialPedidos;
     private boolean pagado; //verifica si un pedido ha sido pagado o no, y se tendra en cuenta para el reporte de ventas
-    private AgregarPedido AgPedido;
+    public AgregarPedido AgPedido;
     private VentanaPedidos ventanaPedidos;
 
     // Constructor original - crear un pedido asociado a una mesa
@@ -37,7 +37,9 @@ public class PedidosMesas{
     }
 
     public void agregarProducto(Productos producto) {
-        this.productos.add(producto);
+        if(producto.cantidad() > 0 ){
+            this.productos.add(producto);
+        }
     }
 
     public static void clearConsole() {
@@ -48,7 +50,7 @@ public class PedidosMesas{
 
     public void agregarPedido() {
         //se resta 1 porque la primera posicion del JComboBox es un texto listaMesas
-        int indexMesaSeleccionada = ventanaPedidos.getListaMesasJComboBox().getSelectedIndex() - 1;
+        int indexMesaSeleccionada = ventanaPedidos.getListaMesasJComboBox().getSelectedIndex() - 1; //obtiene el índice de la mesa donde está haciendo el pedido
 
         if (listaMesas == null || listaMesas.isEmpty()) {
             System.out.println("Error: listaMesas es null o está vacía en agregarPedido()");
@@ -75,7 +77,9 @@ public class PedidosMesas{
                 /*se crea una ventana emergente para agregar los productos a la mesa contiene la VentanaPedidos, true para decir que
                 la ventana es modal (se bloquea la interaction con ademas ventanas hasta cerrarla, la mesa a la que se agrega el pedido*/
 
-                mesaSeleccionada.AgPedido = new AgregarPedido(ventanaPedidos, true, mesaSeleccionada);
+                mesaSeleccionada.AgPedido = new AgregarPedido(ventanaPedidos, true, mesaSeleccionada); //aqui es donde llamamos a agregar pedido
+                // Si no se agregaron productos, no guardamos el pedido
+                if (mesaSeleccionada.productos.isEmpty()) {mesaSeleccionada.AgPedido = null;}
             } else {
                 JOptionPane.showMessageDialog(null, "Pedido ya existente para la mesa " + mesaSeleccionada.idMesa,
                         "Error", JOptionPane.ERROR_MESSAGE);
@@ -103,18 +107,22 @@ public class PedidosMesas{
         referente a la mesa escogida, y se visualiza el pedido de esta mesa*/
         PedidosMesas mesaSeleccionada = listaMesas.get(indexMesaSeleccionada);
 
-        //Verificamos si aun no se ha creado un objeto  para esta mesa
-        if (mesaSeleccionada.AgPedido == null) {
-            JOptionPane.showMessageDialog(null, "No hay un pedido registrado para esta mesa.",
-                    "Error", JOptionPane.ERROR_MESSAGE);
-            return;
+        if (mesaSeleccionada.productos.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "No se registraron productos en esta mesa.", "Sin pedidos", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            //Verificamos si aun no se ha creado un objeto  para esta mesa
+            if (mesaSeleccionada.AgPedido == null) {
+                JOptionPane.showMessageDialog(null, "No hay un pedido registrado para esta mesa.",
+                        "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+            // Llamamos al metodo mostrarMensaje sobre el pedido hecho a una mesa
+            String mensaje = mostrarMensaje(mesaSeleccionada);
+
+            JOptionPane.showMessageDialog(null, mensaje, "Resumen del Pedido",
+                    JOptionPane.INFORMATION_MESSAGE);
         }
-
-        // Llamamos al metodo mostrarMensaje sobre el pedido hecho a una mesa
-        String mensaje = mostrarMensaje(mesaSeleccionada);
-
-        JOptionPane.showMessageDialog(null, mensaje, "Resumen del Pedido",
-                JOptionPane.INFORMATION_MESSAGE);
     }
 
     public String mostrarMensaje(PedidosMesas mesaSeleccionada) {
@@ -130,7 +138,7 @@ public class PedidosMesas{
     private int calcularTotal(PedidosMesas mesa) {
         int total = 0;
         //se itera sobre a lista total de productos de la mesa
-        for (Productos producto : mesa.productos) {
+        for (Productos producto : mesa.productos) { //recorre cada objeto de la lista de productos
             /* se obtienen la cantidad y precio y se multiplican, y esto es sumado. */
             total += producto.precio() * producto.cantidad();
         }
@@ -184,6 +192,7 @@ public class PedidosMesas{
 
             historialPedidos.add(new PedidosMesas(mesaSeleccionada.idMesa,
                     new ArrayList<>(mesaSeleccionada.productos), pagado));
+            //se le pasa el identificador de la mesa y los productos
 
             mesaSeleccionada.productos.clear(); // Vaciar el pedido
 
@@ -259,10 +268,11 @@ public class PedidosMesas{
             return;
         }
 
+        //en terminos simples es como un diccionario en python key:value
         Map<Integer, Integer> ventasPorMesa = new HashMap<>(); // Suma de ventas por cada mesa (IdMesa -> totalVentas)
         Map<Integer, Integer> cantidadPedidosPorMesa = new HashMap<>(); // Cantidad de pedidos por mesa (IdMesa -> cantidadPedidos)
         Map<String, Integer> productosVendidos = new HashMap<>(); // Contador de productos vendidos (nombreProducto -> CantidadVendida)
-        int totalVentas = 0; // 🔥 Nueva variable para total de ventas en general
+        int totalVentas = 0; // Nueva variable para total de ventas en general
 
         // Recorremos el historial de pedidos -> Producto mas vendido, cantidad de pedidos por mesa, ventas totales por mesa
         for (PedidosMesas pedido : historialPedidos) {
@@ -271,24 +281,27 @@ public class PedidosMesas{
             //En cada pedido obtenemos el precio y cantidad de cada producto
             for (Productos producto : pedido.productos) {
                 int subtotal = producto.precio() * producto.cantidad(); //cada producto
-                totalMesa += subtotal; //toda la mesa
-                totalVentas += subtotal; //  Se suma al total general
+                totalMesa += subtotal; //total de toda la mesa
+                totalVentas += subtotal; //  Se suma al total general, ventas de todas las mesas
 
                 /*Contar la cantidad total de cada producto vendido
                 put es un metodo en un HashMap que actualiza o agrega la clave con su determinado valor (diccionarios en python)
                 tiene su clave que es el nombre y su valor que es la cantidad y este se actualiza con la nueva cantidad*/
 
+                //actualiza el diccionario con su nombre y cantidad
                 productosVendidos.put(producto.nombre(), productosVendidos.getOrDefault(producto.nombre(), 0) + producto.cantidad());
             }
 
             /*Sumar las ventas totales por mesa y actualiza las ventas totales de las mesas
             la clave es el idMesa y su valor es el total de esa mesa que irá actualizándose según las ventas*/
 
+            //actualiza el diccionario con el identificador de la mesa y las ventas totales de esa mesa
             ventasPorMesa.put(pedido.idMesa, ventasPorMesa.getOrDefault(pedido.idMesa, 0) + totalMesa);
 
             /*la clave es el idMesa, luego se busca cuantos pedidos ha tenido la mesa, por defecto es 0, +1 es para un nuevo pedido
             el objetivo es calcular la cantidad de pedidos por mesa*/
 
+            //actualiza el diccionario con la cantidad de pedidos por mesa - sirve para el promedio
             cantidadPedidosPorMesa.put(pedido.idMesa, cantidadPedidosPorMesa.getOrDefault(pedido.idMesa, 0) + 1);
         }
 
@@ -299,17 +312,17 @@ public class PedidosMesas{
         /*Aquí se determina cuál fue el producto mas vendido (se itera sobre cada producto y su # de ventas)
         - la clave es el nombreProducto y el valor es CantidadTotalVentasProducto */
 
+        //se recorre todo el mapa de todos los productos vendidos
         for (Map.Entry<String, Integer> entry : productosVendidos.entrySet()) {
-
             //entreySet() devuelve conjuntos clave:valor ----> nombreProducto : cantidadProducto
-            if (entry.getValue() > maxCantidad) {
+            if (entry.getValue() > maxCantidad) { //entry.getValue es la cantidad de productos vendidos
                 //se compara la cantidad vendida del producto actual con la maxima registrada
                 productoMasVendido = entry.getKey(); //se guarda el nombre del producto mas vendido
                 maxCantidad = entry.getValue(); //la maxima cantidad de ventas de ese producto
             }
         }
 
-        // Construir el mensaje del reporte
+        // Construir el mensaje del reporte, Un StringBuilder es una clase en Java que permite crear y manipular cadenas de texto de manera eficiente.
         StringBuilder mensaje = new StringBuilder("📊 Reporte de Ventas 📊\n\n");
 
         //se itera sobre el HashMap para obtener el total vendido de cada mesa
@@ -333,7 +346,7 @@ public class PedidosMesas{
                 JOptionPane.INFORMATION_MESSAGE);
     }
 
-    public String toString() {
+    public String toString() { //imprime información de un objeto productos
         return " mesa " + idMesa + " | productos: " + productos;
     }
 

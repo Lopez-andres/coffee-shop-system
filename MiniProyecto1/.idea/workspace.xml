@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b8bf63f5-bfa7-4d75-adb9-e104e9def29c" name="Changes" comment="init commit">
+      <change beforePath="$PROJECT_DIR$/../src/main/java/Modelo/PedidosMesas.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/Modelo/PedidosMesas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/Modelo/Productos.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/Modelo/Productos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/Vista/AgregarPedido.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/Vista/AgregarPedido.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/Vista/VentanaInicio.form" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/Vista/VentanaInicio.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/Vista/VentanaInicio.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/Vista/VentanaInicio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/Vista/VentanaPedidos.form" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/Vista/VentanaPedidos.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/Vista/VentanaPedidos.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/Vista/VentanaPedidos.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Lopez-andres&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Lopez-andres/MiniProyecto1.git&quot;,
+    &quot;accountId&quot;: &quot;c17756c0-7304-4f88-b56b-c7a527bd09bb&quot;
+  },
+  &quot;recentNewPullRequestHead&quot;: {
+    &quot;server&quot;: {
+      &quot;useHttp&quot;: false,
+      &quot;host&quot;: &quot;github.com&quot;,
+      &quot;port&quot;: null,
+      &quot;suffix&quot;: null
+    },
+    &quot;owner&quot;: &quot;Lopez-andres&quot;,
+    &quot;repository&quot;: &quot;MiniProyecto1&quot;
+  }
+}</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/java/Modelo/PedidosMesas.java" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/Modelo/Productos.java" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/Vista/AgregarPedido.java" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2u48Bwul5uglMIN3oEAGuhyEGrt" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.AgregarPedido.executor": "Run",
+    "Application.VentanaAccion.executor": "Run",
+    "Application.VentanaInicio.executor": "Run",
+    "Application.VentanaInventario.executor": "Run",
+    "Application.VentanaPedidos.executor": "Run",
+    "Application.VentanaPrincipal.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW": "false",
+    "UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH": "210",
+    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW": "true",
+    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "411",
+    "git-widget-placeholder": "master",
+    "junie.onboarding.icon.badge.shown": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/CYS/OneDrive - correounivalle.edu.co/semestre 4/MiniProyecto1",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "vcs.Git",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager" selected="Application.VentanaInicio">
+    <configuration name="AgregarPedido" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Vista.AgregarPedido" />
+      <module name="MiniProyecto1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Vista.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="VentanaInicio" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Vista.VentanaInicio" />
+      <module name="MiniProyecto1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Vista.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="VentanaPedidos" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Vista.VentanaPedidos" />
+      <module name="MiniProyecto1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Vista.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.VentanaInicio" />
+        <item itemvalue="Application.VentanaPedidos" />
+        <item itemvalue="Application.AgregarPedido" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.25410.129" />
+        <option value="bundled-js-predefined-d6986cc7102b-6a121458b545-JavaScript-IU-251.25410.129" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b8bf63f5-bfa7-4d75-adb9-e104e9def29c" name="Changes" comment="" />
+      <created>1741496354279</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1741496354279</updated>
+      <workItem from="1741496356748" duration="204000" />
+      <workItem from="1741710009153" duration="16000" />
+      <workItem from="1741710104709" duration="187000" />
+      <workItem from="1741711285724" duration="1331000" />
+      <workItem from="1741833484295" duration="8421000" />
+      <workItem from="1741868971642" duration="13000" />
+      <workItem from="1741869397793" duration="1636000" />
+      <workItem from="1742009888694" duration="70000" />
+      <workItem from="1742473333906" duration="255000" />
+      <workItem from="1742670599503" duration="23052000" />
+      <workItem from="1742737988480" duration="227000" />
+      <workItem from="1742738249936" duration="32982000" />
+      <workItem from="1742829933142" duration="11933000" />
+      <workItem from="1742851650409" duration="554000" />
+      <workItem from="1742859456400" duration="872000" />
+      <workItem from="1742860836027" duration="684000" />
+      <workItem from="1742914155878" duration="8654000" />
+      <workItem from="1742996413757" duration="10470000" />
+      <workItem from="1743007132315" duration="25090000" />
+      <workItem from="1743077207297" duration="1419000" />
+      <workItem from="1743080720321" duration="175000" />
+      <workItem from="1743117992863" duration="1607000" />
+      <workItem from="1743170473177" duration="6380000" />
+      <workItem from="1743177527806" duration="161000" />
+      <workItem from="1743178655756" duration="10000" />
+      <workItem from="1743178879503" duration="25000" />
+      <workItem from="1750044910150" duration="22000" />
+    </task>
+    <task id="LOCAL-00001" summary="Introducción&#10;El presente informe tiene como objetivo certificar que la implementación del código correspondiente al Miniproyecto #1 ha sido completada de manera exitosa, cumpliendo con los requerimientos establecidos en la guía del proyecto.&#10;&#10;Cumplimiento de Objetivos&#10;Se han desarrollado todas las funcionalidades requeridas, asegurando que la aplicación permite:&#10;&#10;✅ La gestión de pedidos por mesa mediante una interfaz gráfica intuitiva.&#10;✅ La selección de productos y cantidad para cada pedido.&#10;✅ La confirmación de pago y la posibilidad de añadir nuevos pedidos.&#10;✅ La cancelación de pedidos con la opción de registrar uno nuevo.&#10;✅ El reporte de total de ventas, ingresos promedio por mesa y el producto más vendido.&#10;&#10;El código ha sido estructurado y optimizado para garantizar un correcto desempeño, asegurando que las operaciones se ejecutan de manera eficiente y sin errores.&#10;&#10;Documentación y Calidad del Código&#10;Para garantizar la mantenibilidad y comprensión del código, se han implementado las siguientes prácticas de documentación:&#10;&#10;📌 Comentarios en el código: Se han añadido descripciones claras en cada clase y método para facilitar su comprensión.&#10;📌 Nombres descriptivos de variables y funciones: Se ha seguido una nomenclatura que facilita la interpretación del código.&#10;📌 Estructura modular: Se han separado las responsabilidades en diferentes clases para mejorar la organización y la reutilización del código.&#10;📌 Diagramas de clases: Se han incluido diagramas que representan la arquitectura del sistema y las relaciones entre sus componentes.">
+      <option name="closed" value="true" />
+      <created>1743118571284</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1743118571284</updated>
+    </task>
+    <task id="LOCAL-00002" summary="init commit">
+      <option name="closed" value="true" />
+      <created>1743176837850</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1743176837850</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Introducción&#10;El presente informe tiene como objetivo certificar que la implementación del código correspondiente al Miniproyecto #1 ha sido completada de manera exitosa, cumpliendo con los requerimientos establecidos en la guía del proyecto.&#10;&#10;Cumplimiento de Objetivos&#10;Se han desarrollado todas las funcionalidades requeridas, asegurando que la aplicación permite:&#10;&#10;✅ La gestión de pedidos por mesa mediante una interfaz gráfica intuitiva.&#10;✅ La selección de productos y cantidad para cada pedido.&#10;✅ La confirmación de pago y la posibilidad de añadir nuevos pedidos.&#10;✅ La cancelación de pedidos con la opción de registrar uno nuevo.&#10;✅ El reporte de total de ventas, ingresos promedio por mesa y el producto más vendido.&#10;&#10;El código ha sido estructurado y optimizado para garantizar un correcto desempeño, asegurando que las operaciones se ejecutan de manera eficiente y sin errores.&#10;&#10;Documentación y Calidad del Código&#10;Para garantizar la mantenibilidad y comprensión del código, se han implementado las siguientes prácticas de documentación:&#10;&#10; Comentarios en el código: Se han añadido descripciones claras en cada clase y método para facilitar su comprensión.&#10; Nombres descriptivos de variables y funciones: Se ha seguido una nomenclatura que facilita la interpretación del código.&#10; Estructura modular: Se han separado las responsabilidades en diferentes clases para mejorar la organización y la reutilización del código.&#10; Diagramas de clases: Se han incluido diagramas que representan la arquitectura del sistema y las relaciones entre sus componentes." />
+    <MESSAGE value="init commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="init commit" />
+  </component>
+</project>

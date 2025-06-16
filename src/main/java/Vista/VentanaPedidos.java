@@ -7,6 +7,7 @@ import java.awt.*;
 import java.util.ArrayList;
 
 public class VentanaPedidos extends JFrame{
+    //se declaran los componentes
     private JPanel panelPrincipal, panelImagenMesa, panelButtons, panelReportes;
     private JComboBox<Integer> listaMesasJComboBox;
     private JButton agregarPedidoJButton, verPedidoJButton, eliminarPedidoJButton, cobrarPedidoJButton, reporteVentasJButton;
@@ -19,11 +20,11 @@ public class VentanaPedidos extends JFrame{
         this.listaMesas = (listaMesas != null) ? listaMesas : new ArrayList<>(); // Asegurar que no sea this.listaMesas no sea null, y en caso de que si se cree una nueva lista
         this.pdMesas = new PedidosMesas(0, this.listaMesas, this); // Usar la lista correctamente inicializada
 
-        inicializarVentanaAccion(numMesas);
+        inicializarVentanaAccion(numMesas); //metodo que inicializa el JComboBox
         configuracionEventos();
 
         // 🔹 Crear y agregar el panel de la imagen de la mesa con el botón de cambio de imagen
-        mesaImagen = new ImagenMesa();
+        mesaImagen = new ImagenMesa(); //creamos una instancia de la clase ImageMesa
         panelImagenMesa.setLayout(new BorderLayout());
         panelImagenMesa.add(mesaImagen, BorderLayout.CENTER);
     }

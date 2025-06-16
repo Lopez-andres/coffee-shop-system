@@ -3,7 +3,7 @@
   <grid id="27dc6" binding="panelPrincipal" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="20" y="20" width="655" height="538"/>
+      <xy x="20" y="20" width="818" height="623"/>
     </constraints>
     <properties/>
     <border type="none"/>
@@ -37,11 +37,13 @@
         <children>
           <component id="648e4" class="javax.swing.JLabel" binding="Usuario">
             <constraints>
-              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
               <font name="Monospaced" size="20" style="0"/>
-              <text value="Usuario"/>
+              <horizontalAlignment value="10"/>
+              <horizontalTextPosition value="11"/>
+              <text value="User"/>
             </properties>
           </component>
           <hspacer id="23061">
@@ -56,17 +58,17 @@
           </hspacer>
           <component id="5773d" class="javax.swing.JTextField" binding="campoUsuarioTexto">
             <constraints>
-              <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+              <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
                 <preferred-size width="150" height="-1"/>
               </grid>
             </constraints>
             <properties>
-              <font size="18"/>
+              <font name="Monospaced" size="18" style="0"/>
             </properties>
           </component>
           <component id="21bb1" class="javax.swing.JLabel" binding="Password">
             <constraints>
-              <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+              <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
               <font name="Monospaced" size="20" style="0"/>
@@ -75,12 +77,12 @@
           </component>
           <component id="194d3" class="javax.swing.JPasswordField" binding="passwordTexto">
             <constraints>
-              <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+              <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
                 <preferred-size width="150" height="-1"/>
               </grid>
             </constraints>
             <properties>
-              <font size="18"/>
+              <font name="Monospaced" size="18" style="0"/>
             </properties>
           </component>
           <component id="605e6" class="javax.swing.JButton" binding="ingresarButton">
@@ -101,7 +103,7 @@
           </vspacer>
           <component id="92c52" class="javax.swing.JLabel" binding="numMesasLabel">
             <constraints>
-              <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+              <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
               <font name="Monospaced" size="20" style="0"/>
@@ -110,12 +112,12 @@
           </component>
           <component id="90683" class="javax.swing.JTextField" binding="numMesasTexto">
             <constraints>
-              <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+              <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
                 <preferred-size width="150" height="-1"/>
               </grid>
             </constraints>
             <properties>
-              <font size="18"/>
+              <font name="Monospaced" size="18" style="0"/>
             </properties>
           </component>
           <component id="dc36a" class="javax.swing.JButton" binding="modeButton" default-binding="true">
