@@ -1,11 +1,11 @@
 # ☕ Cafe Sales Management – Event-Driven Programming Mini Project
 
-![Interface view](src/main/java/cafeteria.png)
-
 ## 📝 Project Overview
 
 This project is a Java application designed to manage table orders in a café using an interactive graphical interface.  
 The application allows users to process sales, track earnings, and identify the most sold product.
+
+![Interface view](src/main/java/cafeteria.png)
 
 ---
 
